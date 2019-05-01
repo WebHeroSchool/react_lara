@@ -1,7 +1,5 @@
-const count = 14;
-const length = 2;
+const count = 23;
+const length = 3;
 
 export { count as c, length as l };
-
-
 

@@ -13,7 +13,7 @@ function App() {
         <p style = {{color: 'red'}} >
           Edit <code>src/App.js</code> and save to reload.
         </p>
-    <p> count:  { c };  length:  + { l } </p>
+    <p> count:  { c };  length:  { l } </p>
         <a
           className="App-link"
           href="https://reactjs.org"
