@@ -1,8 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom'; 
 
-const myElement = (<div>
-  Thats my element
-</div>);
+const ItemList = () => ( <ul>
+	<li> 1 </li>
+	<li> 2 </li>
+	<li> 3 </li>
+</ul>);
 
-export { myElement };
+const App = () => (<div> 
+	<h1> Hello World </h1> 
+	<ItemList />
+</div>)
+
+export default App;
