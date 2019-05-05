@@ -1,8 +1,7 @@
 import React from 'react';
 
 
-const Item = () => (<span>
-New one item
-</span> );
+const Item = ({ toDoItem }) => (<span> { toDoItem } </span> );
 
 export default Item;
+
