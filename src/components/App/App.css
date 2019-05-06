@@ -1,0 +1,9 @@
+.wrapper {
+	margin: auto;
+	width: 300px;
+}
+
+.wrapper__title {
+	font-family: Helvetica;
+	color: #008080;
+}

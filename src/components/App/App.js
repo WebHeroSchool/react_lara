@@ -1,7 +1,7 @@
 import React from 'react';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
-
+import './App.css';
 
 const App = () => {
 	const items = [
@@ -21,8 +21,8 @@ const App = () => {
 
 
 	return (
-		<div> 
-			<h1> List of Items:</h1>
+		<div className = 'wrapper'> 
+			<h1 className = 'wrapper__title'> List of Items:</h1>
 			<ItemList items={items} />
 			<Footer count={ 3 } />
 		</div>
