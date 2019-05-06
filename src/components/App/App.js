@@ -3,11 +3,30 @@ import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 
 
-const toDoItem = 'build new app';
-const App = () => (<div> 
-	<h1> List of Items:</h1>
-	<ItemList toDoItem = {toDoItem} />
-	<Footer count= { 3 } />
-</div>);
+const App = () => {
+	const items = [
+		{
+			value: 'build new app',
+		},
+		{ 
+			value: 'write down props',
+		},
+		{
+			value: 'do all the other things'
+		}
+	];
+
+
+
+
+
+	return (
+		<div> 
+			<h1> List of Items:</h1>
+			<ItemList items={items} />
+			<Footer count={ 3 } />
+		</div>
+	);
+}
 
 export default App;
