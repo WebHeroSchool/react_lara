@@ -7,12 +7,15 @@ const App = () => {
 	const items = [
 		{
 			value: 'build new app',
+			isDone: true
 		},
 		{ 
 			value: 'write down props',
+			isDone: false
 		},
 		{
-			value: 'do all the other things'
+			value: 'do all the other things',
+			isDone: true
 		}
 	];
 
