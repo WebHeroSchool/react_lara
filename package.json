@@ -29,6 +29,7 @@
     ]
   },
   "devDependencies": {
+    "@material-ui/core": "^3.9.3",
     "classnames": "^2.2.6"
   }
 }
