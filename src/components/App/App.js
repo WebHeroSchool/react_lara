@@ -4,6 +4,8 @@ import InputItem from '../InputItem/InputItem';
 import DatePicker from '../DatePicker/DatePicker';
 import Footer from '../Footer/Footer';
 import styles from'./App.module.css';
+import Todos from '../Todos/Todos';
+import ButtonAdd from '../ButtonAdd/ButtonAdd';
 
 const App = () => {
 	const items = [
@@ -25,10 +27,9 @@ const App = () => {
 	return (
 		<div className={styles.wrapper}> 
 			<h1 className={styles.title}> List of Items:</h1>
-			<InputItem />
-			<ItemList items={items} />
-			<Footer count={3} />
-			<DatePicker />
+			<ItemList items={items}/>
+			<ButtonAdd />
+
 		</div>
 	);
 }

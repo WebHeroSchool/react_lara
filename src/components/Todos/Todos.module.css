@@ -1,0 +1,23 @@
+.tableCell {
+	cursor: pointer;
+}
+
+
+.tableCellBox {
+	min-width: 300px;
+	display: flex;
+	align-items: center;	
+	justify-content: space-between;
+}
+
+.tableCell:hover button {
+    visibility: visible;
+}
+
+.item {
+}
+
+.done {
+	background: #90eebf !important;
+
+}
