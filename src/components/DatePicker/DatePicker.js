@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 const DatePicker = () => (<div> 
 	<TextField
 		id="date"
-		label="Проверить по дате:"
+		label="Check by date:"
 		type="date"
 		defaultValue="2019-05-11"
 		InputLabelProps={{
