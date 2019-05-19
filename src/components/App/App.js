@@ -24,8 +24,16 @@ class App extends React.Component {
 				isDone: true
 			}
 		]
+	};
+
+	constructor(props) {
+		super(props);
+		this.onClickDone = this.onClickDone.bind(this);
 	}
 
+	onClickDone(isDone) {
+		console.log(isDone);
+	}
 
 	render () {
 			
@@ -33,12 +41,12 @@ class App extends React.Component {
 			return (
 				<div className={styles.wrapper}> 
 					<h1 className={styles.title}> List of Items:</h1>
-					<ItemList items={this.state.items}/>
+					<ItemList items={this.state.items} onClickDone={this.onClickDone}/>
 					<ButtonAdd />
 
 				</div>
 			);
 	}
-}
+};
 
 export default App;
