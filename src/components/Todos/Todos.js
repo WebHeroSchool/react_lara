@@ -9,7 +9,7 @@ import Buttons from '../Buttons/Buttons';
 import styles from'./Todos.module.css';
 import classNames from 'classnames'; 
 
-const Todos = ({ items, numSelected, onSelectAllClick, rowCount }) => ( 
+const Todos = ({ items, onClickDone }) => ( 
 	<Table>
 		<TableBody>
 		{items.map(item => 
@@ -20,7 +20,7 @@ const Todos = ({ items, numSelected, onSelectAllClick, rowCount }) => (
 			
 			<TableCell className={styles.tableCell}> 
 				<div className={styles.tableCellBox}>
-					<Checkbox value="checkedA" />
+					<Checkbox value="checkedA" onClick={() => console.log(item.isDone)}/>
     				{item.value} 
 					<Buttons> 
 					</Buttons> 
