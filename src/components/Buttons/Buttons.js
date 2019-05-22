@@ -5,11 +5,11 @@ import IconButton from '@material-ui/core/IconButton';
 
 const Buttons = () => {
 	return (
-			<IconButton aria-label="Delete" className={styles.buttonDelete}>
+			<IconButton
+			aria-label="Delete"
+			className={styles.buttonDelete}>
 				<DeleteIcon fontSize="small"/>
 			</IconButton>
-
-
 	)
 }
 

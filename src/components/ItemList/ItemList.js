@@ -71,9 +71,9 @@ class FullWidthTabs extends React.Component {
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
         >
-          <TabContainer dir={theme.direction}> <Todos items={[{value: 'do cool things', isDone: true}, {value: 'build new app', isDone: true}, {value: 'write down props', isDone: false}]} /></TabContainer>
-          <TabContainer dir={theme.direction}> <Todos items={[{value: 'do cool things', isDone: true}, {value: 'build new app', isDone: true}]} /></TabContainer>
-          <TabContainer dir={theme.direction}> <Todos items={[{value: 'write down props', isDone: false}]} /></TabContainer>
+          <TabContainer dir={theme.direction}> <Todos items={this.props.items} onClickDone={this.props.onClickDone} /></TabContainer>
+          <TabContainer dir={theme.direction}> <Todos items={this.props.items} onClickDone={this.props.onClickDone} /></TabContainer>
+          <TabContainer dir={theme.direction}> <Todos items={this.props.items} onClickDone={this.props.onClickDone} /></TabContainer>
 
         </SwipeableViews>
       </div>
