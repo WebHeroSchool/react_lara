@@ -6,46 +6,53 @@ import Footer from '../Footer/Footer';
 import styles from'./App.module.css';
 import Todos from '../Todos/Todos';
 import ButtonAdd from '../ButtonAdd/ButtonAdd';
+import Item from '../Item/Item';
 
 class App extends React.Component {
 
 	state = {
+		count: 3,
 		items: [
 			{
 				value: 'build new app',
-				isDone: true
+				isDone: true,
+				id: 1
 			},
 			{ 
 				value: 'write down props',
-				isDone: false
+				isDone: false,
+				id: 2
 			},
 			{
 				value: 'do all the other things',
-				isDone: true
+				isDone: false,
+				id: 3
 			}
 		]
 	};
+	
+	onClickDone = id => {
+		const newItemList = this.state.items.map(item => {
+			const newItem = { ...item };
+			if (item.id === id) {
+				newItem.isDone = !item.isDone;
+			}
+			return newItem;
+		});
 
-	constructor(props) {
-		super(props);
-		this.onClickDone = this.onClickDone.bind(this);
-	}
+		this.setState({ items: newItemList });
+	};
+	
+	render () {			
 
-	onClickDone(isDone) {
-		console.log(isDone);
-	}
-
-	render () {
-			
-
-			return (
-				<div className={styles.wrapper}> 
-					<h1 className={styles.title}> List of Items:</h1>
-					<ItemList items={this.state.items} onClickDone={this.onClickDone}/>
-					<ButtonAdd />
-
-				</div>
-			);
+		return (
+			<div className={styles.wrapper}> 
+				<h1 className={styles.title}> List of Items:</h1>
+				<ItemList items={this.state.items} onClickDone={this.onClickDone}/>
+				<ButtonAdd />
+				<Footer count={this.state.count} onClickFooter={this.onClickFooter}/>
+			</div>
+		);
 	}
 };
 

@@ -9,18 +9,21 @@ import Buttons from '../Buttons/Buttons';
 import styles from'./Todos.module.css';
 import classNames from 'classnames'; 
 
-const Todos = ({ items, onClickDone }) => ( 
+const Todos = ({ items, onClickDone, id }) => ( 
 	<Table>
 		<TableBody>
 		{items.map(item => 
-			<TableRow key={item.value} className={classNames({
-				[styles.item]: true,
-				[styles.done]: item.isDone
-			})}> 
+			<TableRow key={item.value}> 
 			
 			<TableCell className={styles.tableCell}> 
 				<div className={styles.tableCellBox}>
-					<Checkbox value="checkedA" onClick={() => console.log(item.isDone)}/>
+					<Checkbox 
+					value="checkedA" 
+					checked={item.isDone} 
+
+					onClick={() => 
+						onClickDone(item.id)
+					}/>
     				{item.value} 
 					<Buttons> 
 					</Buttons> 

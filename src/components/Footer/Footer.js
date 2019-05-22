@@ -1,7 +1,15 @@
 import React from 'react';
 import styles from './Footer.module.css';
+import Typography from '@material-ui/core/Typography';
 
 
-const Footer = ({ count }) => (<div className={styles.Footer}> TODOs left: { count } </div>);
-
+const Footer = ({ count, onClickFooter }) => (
+	<Typography 
+	variant='subtitle1' 
+	color='textSecondary' 
+	className={styles.Footer} 
+	onClick={onClickFooter}> 
+		Tasks left to do: { count }
+	</Typography>);
+	
 export default Footer;
