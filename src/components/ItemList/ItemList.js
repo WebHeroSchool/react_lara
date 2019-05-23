@@ -31,7 +31,7 @@ const styles = theme => ({
   },
 });
 
-class FullWidthTabs extends React.Component {
+class itemListCl extends React.Component {
   state = {
     value: 0,
   };
@@ -71,9 +71,9 @@ class FullWidthTabs extends React.Component {
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
         >
-          <TabContainer dir={theme.direction}> <Todos items={this.props.items} onClickDone={this.props.onClickDone} /></TabContainer>
-          <TabContainer dir={theme.direction}> <Todos items={this.props.items} onClickDone={this.props.onClickDone} /></TabContainer>
-          <TabContainer dir={theme.direction}> <Todos items={this.props.items} onClickDone={this.props.onClickDone} /></TabContainer>
+          <TabContainer dir={theme.direction}> <Todos items={this.props.items} onClickDone={this.props.onClickDone} onClickDelete={this.props.onClickDelete}/></TabContainer>
+          <TabContainer dir={theme.direction}> <Todos items={this.props.items} onClickDone={this.props.onClickDone} onClickDelete={this.props.onClickDelete}/></TabContainer>
+          <TabContainer dir={theme.direction}> <Todos items={this.props.items} onClickDone={this.props.onClickDone} onClickDelete={this.props.onClickDelete}/></TabContainer>
 
         </SwipeableViews>
       </div>
@@ -83,9 +83,9 @@ class FullWidthTabs extends React.Component {
 
 
 
-FullWidthTabs.propTypes = {
+itemListCl.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(FullWidthTabs);
+export default withStyles(styles, { withTheme: true })(itemListCl);

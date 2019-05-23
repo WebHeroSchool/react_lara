@@ -9,7 +9,7 @@ import Buttons from '../Buttons/Buttons';
 import styles from'./Todos.module.css';
 import classNames from 'classnames'; 
 
-const Todos = ({ items, onClickDone, id }) => ( 
+const Todos = ({ items, onClickDone, id, onClickDelete }) => ( 
 	<Table>
 		<TableBody>
 		{items.map(item => 
@@ -25,8 +25,7 @@ const Todos = ({ items, onClickDone, id }) => (
 						onClickDone(item.id)
 					}/>
     				{item.value} 
-					<Buttons> 
-					</Buttons> 
+					<Buttons onClickDelete={onClickDelete} item={item} />
 				</div>
 			</TableCell>
 
