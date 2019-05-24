@@ -45,13 +45,7 @@ class App extends React.Component {
 	
 
 	onClickDelete = id => {
-		const itemsArr = this.state.items.filter(item => {
-			if (item.id !== id) {
-				return true;
-			} else {
-			return false;
-			}
-		});
+		const itemsArr = this.state.items.filter(item => item.id !== id );
 
 		this.setState({ items: itemsArr });
 	}

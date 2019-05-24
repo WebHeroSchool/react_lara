@@ -20,7 +20,6 @@ const Todos = ({ items, onClickDone, id, onClickDelete }) => (
 					<Checkbox 
 					value="checkedA" 
 					checked={item.isDone} 
-
 					onClick={() => 
 						onClickDone(item.id)
 					}/>
