@@ -12,4 +12,8 @@ const Footer = ({ count, onClickFooter }) => (
 		Tasks left to do: { count }
 	</Typography>);
 	
+Footer.defaultProps = {
+	count: 0
+}
+
 export default Footer;
