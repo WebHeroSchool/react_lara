@@ -11,17 +11,7 @@ const ButtonAdd = () => {
 
 	return (
 		<div className={styles.buttonBox}>
-		<Fab size="small" color="secondary" aria-label="Add" className={styles.buttonAdd}>
-			<AddIcon />
-		</Fab>
-
-		<TextField
-		id="filled-dense"
-		label="New task"
-		margin="dense"
-		variant="filled"
-		className={styles.inputItem}
-	/>
+		
 
 		<Button variant="contained" color="secondary">
 			Delete selected

@@ -14,12 +14,12 @@ class InputItem extends React.Component {
 	};
 
 	onButtonClick= () => {
-	this.setState({
-		inputValue: ''
-	})
+		this.setState({
+			inputValue: ''
+		})
 
-	this.props.onClickAdd(this.state.inputValue);
-}
+		this.props.onClickAdd(this.state.inputValue);
+	}
 
 
 	render() {

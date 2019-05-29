@@ -7,6 +7,7 @@ import styles from'./App.module.css';
 import Todos from '../Todos/Todos';
 import ButtonAdd from '../ButtonAdd/ButtonAdd';
 import Item from '../Item/Item';
+import Heading from '../Heading/Heading';
 
 class App extends React.Component {
 
@@ -16,17 +17,14 @@ class App extends React.Component {
 		items: [
 			{
 				value: 'build new app',
-				isDone: true,
 				id: 1
 			},
 			{ 
 				value: 'write down props',
-				isDone: false,
 				id: 2
 			},
 			{
 				value: 'do all the other things',
-				isDone: false,
 				id: 3
 			}
 		]
@@ -77,14 +75,14 @@ class App extends React.Component {
 
 		return (
 			<div className={styles.wrapper}> 
-				<h1 className={styles.title}> List of Items:</h1>
+				<Heading/>
 				<ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete} />
 				<InputItem
 					onClickAdd={this.onClickAdd}
 					hasError={this.state.hasError}
 				/>
-				<ButtonAdd />
-				<Footer count={this.state.count} onClickFooter={this.onClickFooter}/>
+				<ButtonAdd/>
+				<Footer/>
 			</div>
 		);
 	}

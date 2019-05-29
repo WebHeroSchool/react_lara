@@ -8,6 +8,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Todos from '../Todos/Todos';
 import Badge from '@material-ui/core/Badge';
+import Item from '../Item/Item';
 
 
 function TabContainer({ children, dir }) {
@@ -87,5 +88,6 @@ itemListCl.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
 };
+
 
 export default withStyles(styles, { withTheme: true })(itemListCl);
