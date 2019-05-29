@@ -11,6 +11,7 @@ import Item from '../Item/Item';
 class App extends React.Component {
 
 	state = {
+		hasError: false,
 		count: 3,
 		items: [
 			{
@@ -42,7 +43,6 @@ class App extends React.Component {
 
 		this.setState({ items: newItemList });
 	};
-	
 
 	onClickDelete = id => {
 		const itemsArr = this.state.items.filter(item => item.id !== id );
@@ -50,13 +50,39 @@ class App extends React.Component {
 		this.setState({ items: itemsArr });
 	}
 
+	onClickAdd = value => {
+		if ( value !== '') {
 
+			this.setState(state => ({
+				items: [
+					...state.items,
+					{
+						value,
+						isDone: false,
+						id: state.count + 1
+					}
+				],
+				count: state.count + 1,
+				hasError: false
+			}));
+	} else {
+		this.setState(state => ({
+			hasError: true
+		}))
+
+	}
+
+	}
 	render () {			
 
 		return (
 			<div className={styles.wrapper}> 
 				<h1 className={styles.title}> List of Items:</h1>
 				<ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete} />
+				<InputItem
+					onClickAdd={this.onClickAdd}
+					hasError={this.state.hasError}
+				/>
 				<ButtonAdd />
 				<Footer count={this.state.count} onClickFooter={this.onClickFooter}/>
 			</div>
