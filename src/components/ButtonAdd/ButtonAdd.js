@@ -7,19 +7,16 @@ import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import TextField from '@material-ui/core/TextField';
 
-const ButtonAdd = () => {
-
-	return (
-		<div className={styles.buttonBox}>
-		
-
+const ButtonAdd = () => (
+	<div className={styles.buttonBox}>
 		<Button variant="contained" color="secondary">
 			Delete selected
 			<DeleteIcon />
 		</Button>
-		</div>
+	</div>
+)
 
-	)
-}
+//prop-types не нужны 
+
 
 export default ButtonAdd;
