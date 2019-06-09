@@ -1,8 +1,5 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import PropTypes  from 'prop-types';
-
-
 
 const DatePicker = ({ ymdDate }) => (
 <div> 
@@ -17,10 +14,6 @@ const DatePicker = ({ ymdDate }) => (
 	}}
 	/>
 </div>);
-
-DatePicker.propTypes = {
-	defaultValue: PropTypes.func
-}
 
 export default DatePicker;
 
