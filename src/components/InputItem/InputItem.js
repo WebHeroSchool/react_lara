@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import PropTypes  from 'prop-types';
 
 // ф-цию меняем в класс чтобы исп внутр состояние
 
@@ -59,6 +60,10 @@ class InputItem extends React.Component {
 			</Button>
 		</Grid> );
 	}
+}
+
+InputItem.propTypes = {
+	onClickAdd: PropTypes.func
 }
 
 export default InputItem;

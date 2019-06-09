@@ -8,6 +8,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Buttons from '../Buttons/Buttons';
 import styles from'./Todos.module.css';
 import classNames from 'classnames'; 
+import PropTypes  from 'prop-types';
 
 const Todos = ({ items, onClickDone, id, onClickDelete }) => { 
 	// console.log(items);
@@ -36,6 +37,13 @@ const Todos = ({ items, onClickDone, id, onClickDelete }) => {
 			</TableBody>
 		</Table>
 	);
+}
+
+Todos.propTypes = {
+	items: PropTypes.object,
+	onClickDone: PropTypes.func,
+	id: PropTypes.number,
+	onClickDelete: PropTypes.func
 }
 	
 export default Todos;

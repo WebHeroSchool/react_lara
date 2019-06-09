@@ -3,6 +3,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import styles from'./Buttons.module.css';
 import IconButton from '@material-ui/core/IconButton';
 import Item from '../Item/Item';
+import PropTypes  from 'prop-types';
 
 const Buttons = ({ onClickDelete, item }) => (
 	<IconButton
@@ -15,5 +16,9 @@ const Buttons = ({ onClickDelete, item }) => (
 )
 
 
+Buttons.propTypes = {
+	onClickDelete: PropTypes.func,
+	item: PropTypes.func
+}
 
 export default Buttons;

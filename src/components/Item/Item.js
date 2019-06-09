@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import styles from'./Item.module.css';
+import PropTypes  from 'prop-types';
 
 const Item = ({ value, isDone, id }) => {
 	console.log(value);
@@ -17,6 +18,10 @@ const Item = ({ value, isDone, id }) => {
 Item.defaultProps = { 
   isDone: true 
 };
+
+Item.propTypes = {
+	isDone: PropTypes.func
+}
 
 export default Item;
 
