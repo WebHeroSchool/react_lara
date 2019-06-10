@@ -16,7 +16,4 @@ const ButtonAdd = () => (
 	</div>
 )
 
-//prop-types не нужны тут
-
-
 export default ButtonAdd;

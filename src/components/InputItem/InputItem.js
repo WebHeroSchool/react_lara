@@ -7,8 +7,6 @@ import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import PropTypes  from 'prop-types';
 
-// ф-цию меняем в класс чтобы исп внутр состояние
-
 class InputItem extends React.Component {
 	state = {
 		inputValue: ''
