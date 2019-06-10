@@ -14,6 +14,13 @@ import PropTypes  from 'prop-types';
 // Сделали рефакторинг: привели к классу
 class Todos extends React.Component {
 	
+	componentDidMount(){
+		console.log('componentDidMount рендерит список задач (3 ед)'); 
+	}
+
+	componentDidUpdate(prevProps, prevState, snapshot){
+		console.log('componentDidUpdate');
+  }
 	render() {
 	const { items, onClickDone, id, onClickDelete } = this.props;
 		return(<Table>
