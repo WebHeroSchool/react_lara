@@ -8,8 +8,6 @@ const DatePicker = ({ ymdDate }) => (
 		id="date"
 		label="Check by date:"
 		type="date"
-        defaultValue={ymdDate}
-
 		InputLabelProps={{
 		shrink: true,
 	}}

@@ -10,13 +10,32 @@ import styles from'./Todos.module.css';
 import classNames from 'classnames'; 
 import PropTypes  from 'prop-types';
 
-const Todos = ({ items, onClickDone, id, onClickDelete }) => { 
-	// console.log(items);
-	// console.log(onClickDone);
-	// console.log(id);
-	// console.log(onClickDelete);
-	return (
-		<Table>
+
+// Сделали рефакторинг: привели к классу
+class Todos extends React.Component {
+	
+	componentDidMount(){
+		console.log('componentDidMount рендерит список задач'); 
+	}
+
+	componentDidUpdate(prevProps, prevState, snapshot){
+		console.log('update!!');
+		Object.keys(this.props).forEach(key => {
+    if (this.props[key] !== prevProps[key]) {
+      console.log(key, "changed from", prevProps[key], "to", this.props[key]);
+    }
+  });
+		//console.log(arguments); 
+		//console.log(this.props); 
+		//props 
+		//console.log(this.state); 
+		//null потому что у класса нет самостоятельного стейта
+
+	}
+	
+	render() {
+	const { items, onClickDone, id, onClickDelete } = this.props;
+		return(<Table>
 			<TableBody>
 				{items.map(item => 
 					<TableRow key={item.value}> 	
@@ -35,12 +54,13 @@ const Todos = ({ items, onClickDone, id, onClickDelete }) => {
 					</TableRow>
 				)}
 			</TableBody>
-		</Table>
-	);
+		</Table>)
+	}
 }
 
+
 Todos.propTypes = {
-	items: PropTypes.object,
+	items: PropTypes.array,
 	onClickDone: PropTypes.func,
 	id: PropTypes.number,
 	onClickDelete: PropTypes.func
