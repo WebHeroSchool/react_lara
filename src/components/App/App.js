@@ -6,7 +6,6 @@ import Footer from '../Footer/Footer';
 import styles from'./App.module.css';
 import Todos from '../Todos/Todos';
 import ButtonAdd from '../ButtonAdd/ButtonAdd';
-import Item from '../Item/Item';
 import Heading from '../Heading/Heading';
 import PropTypes  from 'prop-types';
 
