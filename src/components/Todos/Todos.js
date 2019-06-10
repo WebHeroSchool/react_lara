@@ -14,25 +14,6 @@ import PropTypes  from 'prop-types';
 // Сделали рефакторинг: привели к классу
 class Todos extends React.Component {
 	
-	componentDidMount(){
-		console.log('componentDidMount рендерит список задач'); 
-	}
-
-	componentDidUpdate(prevProps, prevState, snapshot){
-		console.log('update!!');
-		Object.keys(this.props).forEach(key => {
-    if (this.props[key] !== prevProps[key]) {
-      console.log(key, "changed from", prevProps[key], "to", this.props[key]);
-    }
-  });
-		//console.log(arguments); 
-		//console.log(this.props); 
-		//props 
-		//console.log(this.state); 
-		//null потому что у класса нет самостоятельного стейта
-
-	}
-	
 	render() {
 	const { items, onClickDone, id, onClickDelete } = this.props;
 		return(<Table>

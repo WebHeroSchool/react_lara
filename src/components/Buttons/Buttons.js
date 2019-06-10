@@ -7,9 +7,6 @@ import PropTypes  from 'prop-types';
 
 class Buttons extends React.Component {
 	
-	componentWillUnmount(){
-		console.log('componentWillUnmount Buttons'); 
-	}
 
 	render() {
 		const { onClickDelete, item } = this.props;
