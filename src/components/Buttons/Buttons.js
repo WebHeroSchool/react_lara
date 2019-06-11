@@ -15,17 +15,16 @@ class Buttons extends React.Component {
 		const { onClickDelete, item } = this.props;
 
 		return(
-		<IconButton
-			aria-label="Delete"
-			className={styles.buttonDelete}
-			onClick={() => onClickDelete(item.id)}
-		>
-		<DeleteIcon fontSize="small"/>
-		</IconButton>
+			<IconButton
+				aria-label="Delete"
+				className={styles.buttonDelete}
+				onClick={() => onClickDelete(item.id)}
+			>
+				<DeleteIcon fontSize="small" />
+			</IconButton>
 		)
 	}
 }
-
 
 Buttons.propTypes = {
 	onClickDelete: PropTypes.func,

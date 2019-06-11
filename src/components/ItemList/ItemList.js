@@ -69,8 +69,8 @@ class itemListCl extends React.Component {
           onChangeIndex={this.handleChangeIndex}
         >
           <TabContainer dir={theme.direction}> <Todos items={this.props.items} onClickDone={this.props.onClickDone} onClickDelete={this.props.onClickDelete}/></TabContainer>
-          <TabContainer dir={theme.direction}> <Todos items={this.props.items} onClickDone={this.props.onClickDone} onClickDelete={this.props.onClickDelete}/></TabContainer>
-          <TabContainer dir={theme.direction}> <Todos items={this.props.items} onClickDone={this.props.onClickDone} onClickDelete={this.props.onClickDelete}/></TabContainer>
+          <TabContainer dir={theme.direction}> </TabContainer>
+          <TabContainer dir={theme.direction}> </TabContainer>
 
         </SwipeableViews>
       </div>

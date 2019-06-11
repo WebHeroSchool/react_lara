@@ -69,40 +69,36 @@ class App extends React.Component {
 		}))
 
 	}
-
-
-
 }
-	render () {			
-		let date = new Date().getDate(); //Current Date
-		let month = new Date().getMonth() + 1; //Current Month
 
+	render () {			
+		let date = new Date().getDate(); 
+		let month = new Date().getMonth() + 1; 
 		if (month<10) {
-			month = '0'+month;
+			month = '0' + month;
 		}
 
-		//сделала вывод актуальной даты
-
-		let year = new Date().getFullYear(); //Current Year
-
+		let year = new Date().getFullYear(); 
 		const ymdDate = year + '-' + month + '-' + date;
 
 		return (
 			<div className={styles.wrapper}> 
-				<Heading/>
-				<ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete} />
-				<DatePicker ymdDate={ymdDate}/>
+				<Heading />
+				<ItemList
+					items={this.state.items} 
+					onClickDone={this.onClickDone} 
+					onClickDelete={this.onClickDelete}
+				/>
+				<DatePicker ymdDate={ymdDate} />
 				<InputItem
 					onClickAdd={this.onClickAdd}
 					hasError={this.state.hasError}
 				/>
-				<ButtonAdd/>
+				<ButtonAdd />
 				<Footer />
 			</div>
 		);
 	}
 };
-
-
 
 export default App;
