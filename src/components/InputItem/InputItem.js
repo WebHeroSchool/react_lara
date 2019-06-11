@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import PropTypes  from 'prop-types';
 
 // ф-цию меняем в класс чтобы исп внутр состояние
 
@@ -21,21 +22,16 @@ class InputItem extends React.Component {
 		this.props.onClickAdd(this.state.inputValue);
 	}
 
-
 	render() {
-		const { onClickAdd } = this.props;
 		const condition = this.props.hasError;
 		let formHelperText;
-
-
 		if (condition) {
-			formHelperText = <FormHelperText 
-				id="component-error-text">
+			formHelperText = <FormHelperText>
 				Error
 				</FormHelperText>
 		} else {
 			formHelperText = ''
-		}
+		}	
 
 		return (<Grid
 			className={styles.inputBox}> 
@@ -64,6 +60,10 @@ class InputItem extends React.Component {
 			</Button>
 		</Grid> );
 	}
+}
+
+InputItem.propTypes = {
+	onClickAdd: PropTypes.func
 }
 
 export default InputItem;

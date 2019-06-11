@@ -8,30 +8,50 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Buttons from '../Buttons/Buttons';
 import styles from'./Todos.module.css';
 import classNames from 'classnames'; 
+import PropTypes  from 'prop-types';
 
-const Todos = ({ items, onClickDone, id, onClickDelete }) => ( 
-	<Table>
-		<TableBody>
-		{items.map(item => 
-			<TableRow key={item.value}> 
-			
-			<TableCell className={styles.tableCell}> 
-				<div className={styles.tableCellBox}>
-					<Checkbox 
-					value="checkedA" 
-					checked={item.isDone} 
-					onClick={() => 
-						onClickDone(item.id)
-					}/>
-    				{item.value} 
-					<Buttons onClickDelete={onClickDelete} item={item} />
-				</div>
-			</TableCell>
 
-			</TableRow>
-		)}
-		</TableBody>
-	</Table>
-	);
+// Сделали рефакторинг: привели к классу
+class Todos extends React.Component {
+	
+	componentDidMount(){
+		console.log('componentDidMount рендерит список задач (3 ед)'); 
+	}
 
-	export default Todos;
+	componentDidUpdate(prevProps, prevState, snapshot){
+		console.log('componentDidUpdate');
+  }
+	render() {
+	const { items, onClickDone, id, onClickDelete } = this.props;
+		return(<Table>
+			<TableBody>
+				{items.map(item => 
+					<TableRow key={item.value}> 	
+						<TableCell className={styles.tableCell}> 
+							<div className={styles.tableCellBox}>
+								<Checkbox 
+									value="checkedA" 
+									checked={item.isDone} 
+									onClick={() => 
+									onClickDone(item.id)
+								}/>
+								{item.value} 
+								<Buttons onClickDelete={onClickDelete} item={item} />
+							</div>
+						</TableCell>
+					</TableRow>
+				)}
+			</TableBody>
+		</Table>)
+	}
+}
+
+
+Todos.propTypes = {
+	items: PropTypes.array,
+	onClickDone: PropTypes.func,
+	id: PropTypes.number,
+	onClickDelete: PropTypes.func
+}
+	
+export default Todos;
