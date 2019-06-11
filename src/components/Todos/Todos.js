@@ -13,14 +13,14 @@ import PropTypes  from 'prop-types';
 
 // Сделали рефакторинг: привели к классу
 class Todos extends React.Component {
-	
 	componentDidMount(){
-		console.log('componentDidMount рендерит список задач (3 ед)'); 
+	//	this.timerID = setInterval(() => console.log('Interval'), 1000); 
 	}
 
-	componentDidUpdate(prevProps, prevState, snapshot){
-		console.log('componentDidUpdate');
-  }
+	componentWillUnmount () {
+		clearInterval(this.timerID);
+	}
+
 	render() {
 	const { items, onClickDone, id, onClickDelete } = this.props;
 		return(<Table>
