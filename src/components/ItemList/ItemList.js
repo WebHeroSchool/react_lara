@@ -11,13 +11,11 @@ import Badge from '@material-ui/core/Badge';
 import Item from '../Item/Item';
 
 
-function TabContainer({ children, dir }) {
-  return (
-    <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
-      {children}
-    </Typography>
-  );
-}
+const TabContainer = ({ children, dir }) => (
+  <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
+    {children}
+  </Typography>
+);
 
 
 TabContainer.propTypes = {

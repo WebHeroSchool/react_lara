@@ -8,6 +8,7 @@ import Todos from '../Todos/Todos';
 import ButtonAdd from '../ButtonAdd/ButtonAdd';
 import Item from '../Item/Item';
 import Heading from '../Heading/Heading';
+import PropTypes  from 'prop-types';
 
 class App extends React.Component {
 
@@ -70,19 +71,34 @@ class App extends React.Component {
 
 	}
 
-	}
+
+
+}
 	render () {			
+		let date = new Date().getDate(); //Current Date
+		let month = new Date().getMonth() + 1; //Current Month
+
+		if (month<10) {
+			month = '0'+month;
+		}
+
+		//сделала вывод актуальной даты
+
+		let year = new Date().getFullYear(); //Current Year
+
+		const ymdDate = year + '-' + month + '-' + date;
 
 		return (
 			<div className={styles.wrapper}> 
 				<Heading/>
 				<ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete} />
+				<DatePicker ymdDate={ymdDate}/>
 				<InputItem
 					onClickAdd={this.onClickAdd}
 					hasError={this.state.hasError}
 				/>
 				<ButtonAdd/>
-				<Footer/>
+				<Footer />
 			</div>
 		);
 	}
