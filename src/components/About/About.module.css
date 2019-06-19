@@ -1,0 +1,18 @@
+.titlewrap {
+	margin: auto;
+	width: 300px;
+}
+
+.title {
+	position: relative;
+	padding-bottom: .5rem;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	text-align: center;
+	color: #00838f;
+}
+
+.count {
+	color: #008080;
+}
+

@@ -1,8 +1,22 @@
 .wrapper {
-	margin: auto;
-	width: 300px;
+	width: auto;
+	display: flex;
 }
 
+.wrap {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 2%;
+}
+
+.wrapperTwo {
+	width: auto;
+}
+
+.link {
+	text-decoration: none;
+}
 
 .count {
 	color: #008080;
