@@ -1,6 +1,8 @@
 .titlewrap {
 	margin: auto;
 	width: 300px;
+	display: flex;
+	flex-direction: column;
 }
 
 .title {
@@ -16,3 +18,13 @@
 	color: #008080;
 }
 
+
+.list {
+	text-decoration: none;
+}
+
+.img {
+	width: 80%;
+	margin: 5% 0;
+
+}
