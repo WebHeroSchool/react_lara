@@ -8,8 +8,6 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Todos from '../Todos/Todos';
 import Badge from '@material-ui/core/Badge';
-import Item from '../Item/Item';
-
 
 const TabContainer = ({ children, dir }) => (
   <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
@@ -71,8 +69,8 @@ class itemListCl extends React.Component {
           onChangeIndex={this.handleChangeIndex}
         >
           <TabContainer dir={theme.direction}> <Todos items={this.props.items} onClickDone={this.props.onClickDone} onClickDelete={this.props.onClickDelete}/></TabContainer>
-          <TabContainer dir={theme.direction}> <Todos items={this.props.items} onClickDone={this.props.onClickDone} onClickDelete={this.props.onClickDelete}/></TabContainer>
-          <TabContainer dir={theme.direction}> <Todos items={this.props.items} onClickDone={this.props.onClickDone} onClickDelete={this.props.onClickDelete}/></TabContainer>
+          <TabContainer dir={theme.direction}> </TabContainer>
+          <TabContainer dir={theme.direction}> </TabContainer>
 
         </SwipeableViews>
       </div>
