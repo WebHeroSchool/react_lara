@@ -1,18 +1,70 @@
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import PropTypes  from 'prop-types';
 import styles from'./About.module.css';
 
+import TextField from '@material-ui/core/TextField';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
-const About = ({aboutMe}) => (
-	<div className={styles.titlewrap}>
-		<h1 className={styles.title}> {aboutMe} </h1>
-	</div>
-)
+import PropTypes  from 'prop-types';
+import Octokit  from '@octokit/rest';
 
-About.defaultProps = {
-	aboutMe: "My name is Lara. My tagline is ' From zero to webhero' "
-}
+
+const octokit = new Octokit();
+class About extends React.Component {
+	state = {
+		isRepoListLoading: true,
+		isUserInfoLoading: true
+	}
+
+	componentDidMount() {
+		octokit.repos.listForUser({
+			username: 'LaraAloha'
+		}).then(({ data }) => {
+			this.setState({
+				repoList: data,
+				isRepoListLoading: false
+			});
+		});
+
+		octokit.users.getByUsername({
+			username: 'LaraAloha'
+		}).then(({ data })=> {
+			this.setState({
+				infoList: data,
+				isUserInfoLoading: false
+			});
+		});
+	}
+
+	render() {
+		const { infoList, avatar_url, isRepoListLoading, repoList, isUserInfoLoading } = this.state;
+
+		return(
+
+			<div className={styles.titlewrap}>
+				<h1> 
+				{ isUserInfoLoading ? 
+				<LinearProgress /> : 
+				<div>
+					{infoList.login}
+					<img className={styles.img} src={infoList.avatar_url} />
+				</div>
+				}					
+				</h1>
+				My repos:
+				{!isRepoListLoading && <ol>
+					{repoList.map(repo => (
+						<li key={repo.id}>
+							<a className={styles.list} href={repo.clone_url}>
+								{repo.name}
+							</a>
+						</li>
+					))}
+				</ol>}
+			</div>
+		);
+	}
+
+}		
 
 About.propTypes = {
 	aboutMe: PropTypes.string
