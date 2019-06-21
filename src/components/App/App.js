@@ -1,109 +1,33 @@
 import React from 'react';
-import ItemList from '../ItemList/ItemList';
-import InputItem from '../InputItem/InputItem';
-import DatePicker from '../DatePicker/DatePicker';
-import Footer from '../Footer/Footer';
+
 import styles from'./App.module.css';
-import Todos from '../Todos/Todos';
-import ButtonAdd from '../ButtonAdd/ButtonAdd';
-import Item from '../Item/Item';
-import Heading from '../Heading/Heading';
+import About from '../About/About';
+import Todo from '../Todo/Todo';
+import Contacts from '../Contacts/Contacts';
+
+import Card from '@material-ui/core/Card';
+import MenuList from '@material-ui/core/MenuList';
+import MenuItem from '@material-ui/core/MenuItem';
+
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import PropTypes  from 'prop-types';
 
-class App extends React.Component {
+const App = () => 
+	(<Router>
+		<div className={styles.wrap}>
+			<Card className={styles.wrapper}>
+				<MenuList>
+					<Link to='/' className={styles.link}><MenuItem> About me </MenuItem></Link>
+					<Link to='/todo' className={styles.link}><MenuItem> Todo </MenuItem></Link>
+					<Link to='/contacts' className={styles.link}><MenuItem> Contacts </MenuItem></Link>
+				</MenuList>
+			</Card>
+			<Card className={styles.wrapperTwo}>
+				<Route path='/' exact component={About} />
+				<Route path='/todo' component={Todo} />
+				<Route path='/contacts' component={Contacts} />
+			</Card>
+		</div>
+	</Router>);
 
-	state = {
-		hasError: false,
-		count: 3,
-		items: [
-			{
-				value: 'build new app',
-				id: 1
-			},
-			{ 
-				value: 'write down props',
-				id: 2
-			},
-			{
-				value: 'do all the other things',
-				id: 3
-			}
-		]
-	};
-	
-	onClickDone = id => {
-		const newItemList = this.state.items.map(item => {
-			const newItem = { ...item };
-			if (item.id === id) {
-				newItem.isDone = !item.isDone;
-			}
-			return newItem;
-		});
-
-		this.setState({ items: newItemList });
-	};
-
-	onClickDelete = id => {
-		const itemsArr = this.state.items.filter(item => item.id !== id );
-
-		this.setState({ items: itemsArr });
-	}
-
-	onClickAdd = value => {
-		if ( value !== '') {
-
-			this.setState(state => ({
-				items: [
-					...state.items,
-					{
-						value,
-						isDone: false,
-						id: state.count + 1
-					}
-				],
-				count: state.count + 1,
-				hasError: false
-			}));
-	} else {
-		this.setState(state => ({
-			hasError: true
-		}))
-
-	}
-
-
-
-}
-	render () {			
-		let date = new Date().getDate(); //Current Date
-		let month = new Date().getMonth() + 1; //Current Month
-
-		if (month<10) {
-			month = '0'+month;
-		}
-
-		//сделала вывод актуальной даты
-
-		let year = new Date().getFullYear(); //Current Year
-
-		const ymdDate = year + '-' + month + '-' + date;
-
-		return (
-			<div className={styles.wrapper}> 
-				<Heading/>
-				<ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete} />
-				<DatePicker ymdDate={ymdDate}/>
-				<InputItem
-					onClickAdd={this.onClickAdd}
-					hasError={this.state.hasError}
-				/>
-				<ButtonAdd/>
-				<Footer />
-			</div>
-		);
-	}
-};
-
-
-
-export default App;
+export default App; 
